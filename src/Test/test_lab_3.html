@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>Контроль знаний</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+
+	<script src="../js/bootstrap.min.js"></script>
+
+<style>
+body{
+	background-color: gainsboro;
+	background-position-x: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	
+}
+#option1,#option2,#option3,#option4{
+	display:none;
+	margin-bottom: 20px;
+}
+.style{
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 18px;
+    color:snow;
+    background-color: seagreen;
+    padding: 6px 8px;
+	border-radius: 5px;
+	width: 20%;
+}
+.style_1{
+	text-decoration: none;
+    font-size: 17px;
+    margin-right: 22px;
+    color: #fff;
+    background:#279;
+    padding: 6px 8px;
+	border-radius: 5px;
+}
+</style>
+<script type="text/javascript">
+
+	//Массив вопросов и ответа
+	var data_array = [
+	  ["1. Должны ли отличаться геометрические пропорции изображения государственного регистрационного знака от геометрических пропорций самого государственного регистрационного знака ?",
+	  "1. Да",
+	  "2. Нет",
+	  "3. Да, но не более чем на 10%",
+	  " - ",
+	  3],
+	  ["2. Максимальная скорость транспортного средства для корректного распознавания номера ограничена:",
+	  "1. 90 км/ч ",
+	  "2. 120 км/ч ",
+	  "3. 100 км/ч ",
+	  "4. 150 км/ч ",
+	  2],
+	  ["3.Какое максимально допустимое неравномерное загрязнение государственных автомобильных номеров, позволяет провести процедуру распознавания автономеров ?",
+	  "1. Не более 50%",
+	  "2. Не более 30%",
+	  "3. Не более 20%",
+	  "4. Не более 12%",
+	  4],
+	  ["4. Реализована ли функция 'Онлайн распознавания автономеров' в программном комплексе AxxonNext ?",
+	  "1. Да",
+	  "2. Нет",
+	  "3. Зависит от типа выбранной лицензии",
+	  " - ",
+	  3],
+	  ["5. Поддерживает ли система AxonNext функцию оффлайн-аналитики?",
+	  "1. Да",
+	  "2. Нет",
+	  " - ",
+	  " - ",
+	  1],
+	  ["6. Выбор видеопотока низкого качества позволяет: ",
+	  "1. Увеличить нагрузку на видеосервер",
+	  "2. Нагрузка на сервер не изменится",
+	  "3. Уменьшить нагрузку на сервер",
+	  3],
+	  ["7. Минимально допустимая контрастность при равномерном загрязнении регистрационного знака должна быть:",
+	  "1. 25%",
+	  "2. Не ниже 10%",
+	  "3. Не ниже 5%",
+	  " - ",
+	  2],
+	  ["8. Для записи метаданных в базу данных следует активировать в программном комплексе AxxonNext следующую функцию: ",
+	  "1. Распознавание в реальном времени",
+	  "2. Запись траекторий объектов",
+	  " - ",
+	  " - ",
+	  2],
+	  ["9. Какая высота символов и толщина штриха должны быть для осуществления распознавания автономеров ?",
+	  "1. Высота не менее 30px, толщина штриха не менее 4px",
+	  "2. Высота не менее 15px, толщина штриха не менее 2px",
+	  "3. Высота не менее 25px, толщина штриха не менее 6px",
+	  " - ",
+	  2],
+	  ["10. Влияет ли параметр минимальная ширина номера на загрузку ЦП ?",
+	  "1. Незначительно ",
+	  "2. Чем выше значение, тем больше нагрузка",
+	  "3. Нет ",
+	  " - ",
+	  2],
+	];
+
+	var plus = 0;
+	var time = 0;
+	var cur_answer = 0;
+	var count_answer = data_array.length;
+	
+	function sec() {
+		time++;	
+		document.getElementById('time').innerHTML='Затрачено времени: ' + time + ' сек';
+	}
+	
+	function check(num){
+
+		if(num == 0){ 
+		
+			document.getElementById('option1').style.display='block';
+			document.getElementById('option2').style.display='block';
+			document.getElementById('option3').style.display='block';
+			document.getElementById('option4').style.display='block';
+			document.getElementById('question').style.display='block';
+
+			document.getElementById('option1').innerHTML=data_array[cur_answer][1];
+			document.getElementById('option2').innerHTML=data_array[cur_answer][2];
+			document.getElementById('option3').innerHTML=data_array[cur_answer][3];
+			document.getElementById('option4').innerHTML=data_array[cur_answer][4];
+			document.getElementById('question').innerHTML=data_array[cur_answer][0];
+			
+			document.getElementById('start').style.display='none';
+			document.getElementById('end').style.display='inline';
+			
+			var intervalID = setInterval(sec, 1000);
+			
+		}else{
+
+			if( num ==  data_array[cur_answer][5]){
+				plus++;
+				document.getElementById('result').innerHTML='Верно!';
+
+			}else{
+				document.getElementById('result').innerHTML="Неверно!";
+			}
+				
+			cur_answer++;
+			if(cur_answer < count_answer){
+			
+				document.getElementById('option1').innerHTML=data_array[cur_answer][1];
+				document.getElementById('option2').innerHTML=data_array[cur_answer][2];
+				document.getElementById('option3').innerHTML=data_array[cur_answer][3];
+				document.getElementById('option4').innerHTML=data_array[cur_answer][4];
+				document.getElementById('question').innerHTML=data_array[cur_answer][0];
+				
+			}else{
+				
+				document.getElementById('time').id = 'stop';
+				document.getElementById('option1').style.display='none';
+				document.getElementById('option2').style.display='none';
+				document.getElementById('option3').style.display='none';
+				document.getElementById('option4').style.display='none';
+				document.getElementById('question').style.display='none';
+				document.getElementById('end').style.display='inline';
+				
+				var percent =  Math.round(plus/count_answer*100);				
+				var res = 'Плохо! Изучите теоретический материал!';
+				if(percent>=50) res = 'Удовлетворительно!Изучите теоретический материал!';
+				if(percent>=70) res = 'Хорошо! Повторите теоретический материал!';
+				if(percent>=90) res = 'Отлично! Приступайте к выполнению практического задания!';
+				document.getElementById('result').innerHTML='Правильных ответов: ' + plus + ' из ' + count_answer + ' (' + percent + '%)<br>' + res;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<center>
+		<p style="font-family:'Times New Roman', Times, serif;
+		font-size: 32px;font-weight: bold;padding-top: 2px;">
+		Лабораторная работа №3 - <em>Распознавание автономеров</em></p>		
+		<p style="font-size: 30px;font-weight: bold;padding-top: 2px;" id="time">Затрачено времени: 0 сек</p>
+		<p style="font-size: 26px;
+		font-style: italic;" id="result"></p>
+					
+		<p style="font-size: 30px; padding-top: 2px;" id="question"></p>
+		
+		<button onclick="check(1)" class="style" id="option1"></button>
+		
+		<button onclick="check(2)" class="style" id="option2"></button>
+		
+		<button onclick="check(3)" class="style" id="option3"></button>
+		
+		<button onclick="check(4)" class="style" id="option4"></button>
+	</center><br>
+	<center>
+		<button id="start" class="style" onclick="check(0)">Начать тест</button>
+		<script type="text/javascript"> var curent_url = document.URL; document.write("<a id='end' style='display: none;' class='style_1' href='" + curent_url + "'>Начать сначала</a>"); </script>	
+	</center>
+	
+	<center style="clear:both; "><br>
+		<a href="../Teoriya.html" class="style_1" ><em>Вернуться к теории</em></a> 
+	</center>
+
+</body>
+</html>

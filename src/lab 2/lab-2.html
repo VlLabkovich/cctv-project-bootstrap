@@ -1,0 +1,174 @@
+<htmL>
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторный практикум</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="../Index.html">
+            <img src="../images/index/bsuir-logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../Index.html">Главная <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Teoriya.html">Теория</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../Perechen.html">Практика</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../ControlZnaniy.html">Контроль знаний</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Author.html">Об авторах</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h2>Лабораторная работа №2</h2>
+    <h3><em>Детектирование и распознавание лиц</em></h3>
+
+    <br>
+    </br>
+    <p><strong><em>Цель работы:<p></em></strong>Изучить принцип работы, настройки и применения детектора распознавания
+        лиц, получить необходимые навыки работы с видеоархивами, а также анализа полученных данных (сработок) детектора
+    </p>
+    </p>
+    <p><strong><em>Задачи:<p></em></strong>Получить теоретические и практические навыки
+        по настройке и контролю работы детектора распознавания лиц, произвести сбор данных
+        из зон детектирования после предварительной настройки детектора,
+        на основе анализа полученных метаданных записанных в видеоархиве.
+    </p>
+    </p>
+
+    <br>
+
+    <p><strong>1.Теоретическая часть</strong></p>
+    <p>
+        Для успешного выполнения лабораторной работы требуется изучить и руководствоваться
+        следующим теоретическим материалом:
+        <em>
+            <ul style="font-size: 19px;">
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072640">
+                    Настройка архивов;</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072115">
+                    Настройка анализа видео из внешних систем (Offline Analytics)</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072122">
+                    Загрузка видео в ПК Axxon Next</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072830">
+                    Создание детекторов</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072735">
+                    Настройка детекторов</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072736">
+                    Настройка детекторов лиц</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072780">
+                    Задание параметров детекторов лиц</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072771">
+                    Настройка онлайн распознавания лиц</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150072869">
+                    Проверка срабатывания детектора</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150073298">
+                    Видеонаблюдение в режиме анализа архива</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150073662">
+                    Распознавание и поиск лиц</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150073501">
+                    Поиск по лицам</a></li>
+                <li><a href="https://doc.axxonsoft.com/confluence/pages/viewpage.action?pageId=150073261">
+                    Системный журнал</a></li>
+
+            </ul>
+        </em>
+
+    </p>
+    <br>
+
+    <p><strong>2.Практическое задание</strong></p>
+
+    <p>После изучения теоретического материала и успешной сдачи теста контроля знаний, следует выполнить
+        практическое задание для закрепления теоретических знаний и полуления практических навыков по работе
+        с программным комплексом AxxonNext, настройке сервисного детектора, а также по работе с видеоархивам.</p>
+
+    <p><em>Задание:</em> Произвести детектирование и распознавание не менее 5 лиц. на каждом видео,
+        используя обьект детекция лиц и на его базе детектор появления обьекта в заданной зоне.
+        Сделать скриншоты лиц из видеофайла, загрузить фото лиц в ПО АххonNext, произвести поиск по лицам
+        в архиве и распознавание лиц с достоверным сходством не ниже 70%.
+        <em>(см. выше. Видеонаблюдение в режиме анализа архива)</em></p>
+    <ol>
+        <li>Запустить программный комплекс AxxonNext<a href="../Teoriya.html">(см.раздел Теория)</a></li>
+
+        <li>Создать видеоархив требуемого размера</li>
+
+        <li>Добавить в программный комплекс новое "программное устройство" для детектирования
+            (в данном случае детектирование будет производиться посредством оффлайн-aналитики
+            с помощью встроенной функции в ПО AxxonNext "Анализ видео из внешних систем").
+            Видеофайлы, которые следует загрузить в программный комплекс AxxonNext для выполнения лабораторной работы
+            находятся в
+            папке: <strong>ЭУМК-2020/Видео/2. Детектирование и распознавание лиц/Video_1 и Video_2. </strong>
+            <em>(см. выше. Загрузка видео в ПК Axxon Next)</em></li>
+
+        <li>Сделать привязку добавленного "программного устройства" к созданному ранее видеоархиву</li>
+
+        <li>Создать базовый обьект, детектор лиц. На основе базового обьекта, создать детектор анализа
+            ситуации "появление обьекта", можно также использовать другие детекторы встроенные в данный обьект
+        </li>
+
+        <li>Произвести настройку базового обьекта детектор лиц и детектор анализа
+            ситуации "появление обьекта" заданием определенных характеристик.
+            Выделить детектируемую область в окне видеонаблюдени, также можно выделить область которую нужно исключить
+            из
+            детекции
+        </li>
+
+        <li>Настроить макрокоманду (автоматическое правило) при срабатывании детектора, режим инициирования тревоги и
+            записи в архив (в параметре
+            завершить после, желательно указывать до 5 сек)
+            <a href="../Teoriya.html">(см.раздел Теория)</a></li>
+
+        <li>С помощью системного журнала проверить правильность работы детектора и макрокоманд, проведя процедуру поиска
+            событий.<em>(см. выше. Загрузка видео в ПК Axxon Next</em>
+
+        <li>Выполнить основное задание, после настройки программного комплекса</li>
+
+    </ol>
+    <p>После выполнения всех вышеизложенных пунктов, с полученными данными обратиться к преподавателю,
+        с целью оценки результатов выполнения лабораторной работы.</p>
+    <br>
+    </br>
+</div>
+<div id="footer">
+    (c) Лабкович Владислав Игоревич, 2020
+</div>
+
+</body>
+
+</htmL>
